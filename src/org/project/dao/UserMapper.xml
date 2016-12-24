@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.project.dao.UserMapper">
+
+
+
+
+	<select id="getUser" parameterType="User" resultType="User">
+		select * from as_user where userName=#{userName} and userPassword=#{userPassword}
+
+
+	</select>
+	
+	
+	<select id="findUserList" resultType="User">
+	
+	select userName,userPassword from as_user s
+	
+	
+	</select>
+	
+
+	<insert id="InsertUser" parameterType="User"  >
+		insert into as_user(userName,userPassword,creationTime)
+		values(#{userName},#{userPassword},#{creationTime})
+
+	</insert>
+
+	<delete id="DletetUser" parameterType="int">
+
+		delete from as_user where id=#{value}
+
+	</delete>
+	
+	
+   <delete id="deleteUserByuserName" parameterType="User">
+
+        delete from as_user where userName=#{userName}
+
+    </delete>
+
+
+
+<update id="UpdatetUser" parameterType="User">
+
+	update as_user set userPassword=#{userPassword} where as_user.userName=#{userName}
+
+	</update>
+
+<select id="getUserByuserName" parameterType="String" resultType="User">
+
+SELECT s.userName,s.userPassword from as_user s where s.userName=#{value}
+
+
+
+</select>	
+	
+	
+	
+	
+
+</mapper>

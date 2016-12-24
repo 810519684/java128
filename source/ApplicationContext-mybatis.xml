@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+<!-- 另一个读取配置文件 -->
+<context:property-placeholder location="classpath:db.properties"/>
+
+
+
+<!-- 使用jndi获取数据源(使用dbcp)-->
+<bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" scope="singleton">
+<property name="driverClassName" value="${mysq.lDriver}" />
+<property name="url" value="${mysql.Url}"/>
+<property name="username" value="${mysql.name}"/>
+<property name="password" value="${mysql.password}"/>
+</bean> 
+
+<!-- 让事务的注解的方式生效 -->
+<tx:annotation-driven/>
+<!-- 事务管理  @Transational -->
+<bean  id="transactionManger" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+<property name="dataSource"  ref="datasource"/>
+
+</bean>
+
+<!-- mybatis的sqlsession配置,里面的三个参数必须要配置 -->
+
+<bean id="SqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+<property name="dataSource" ref="datasource"/>
+<property name="configLocation" value="classpath:SqlMapConfig.xml" />
+<!-- 采用Mapper接口形式不能采用下面方式来引用 -->
+<!--  <property name="mapperLocations" value="classpath:com/bdqn/dao/*.xml" />  -->
+</bean>
+
+
+<!-- 批量扫描指定package包下的所有的mapper接口并生成实例 -->
+
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+<property name="basePackage" value="org.project.dao" />
+
+
+</bean>
+
+
+
+</beans>
