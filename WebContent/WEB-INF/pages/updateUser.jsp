@@ -10,8 +10,8 @@
 <body>
 <div>
 <ul>
-<ui><a href="otherUserLogin.html">其他用户登录</a></ui>
-<ui><a href="modifyUserpassword.html">用户账户密码修改</a></ui>
+<ui><a href="otherUserLogin.html">其他用户登录</a></ui><br/>
+<ui><a href="modifyUserpassword.html">用户账户密码修改</a></ui><br/>
 <ui><a href="deleteUser.html">用户注销</a></ui>
 
 

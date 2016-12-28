@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-恭喜你进入代理商用户管理桌面
+恭喜<%=session.getAttribute("userName") %>进入代理商用户管理桌面
 <ul>
 <ui> <a href="#">用户列表</a></ui>
 <ui> <a href="#">添加用户</a></ui>

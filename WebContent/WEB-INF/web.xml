@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>newssmproject</display-name>
- 
- 
- 
+
   <context-param>
   <param-name>contextConfigLocation</param-name>
   <param-value>classpath:ApplicationContext-*.xml</param-value>
+  
   </context-param>
   
-  
-  
-   <!-- 启动监听 -->
 
-  
   <!-- 字符 -->
    <!--处理 post中文乱码配置 --> 
  <filter>
@@ -42,7 +37,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> 
 		<init-param> 
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring-servlet.xml</param-value>
+			<param-value>classpath:spring-servlet.xml</param-value>		
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -55,13 +50,7 @@
 	</servlet-mapping>
 	
  <!-- spring配置监听 ，可以加载context-param里面的-->
- 
- 	
-  <listener>
-<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 
-</listener>
-  
   <!-- log4j -->
   
   <context-param>
@@ -76,8 +65,17 @@
  <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
  
  </listener>
-  
-  
+ 
+    <listener>
+<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+
+</listener>
+  <!-- 初始化代理商系统数据 -->
+ <!--  <listener>
+  <listener-class>org.project.systemInit.SystemInit</listener-class>
+ 
+  </listener> -->
+  -->
   
   
   <welcome-file-list>

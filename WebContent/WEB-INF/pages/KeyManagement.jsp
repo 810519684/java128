@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-进入关键词申请管理
+进入<%=session.getAttribute("userName") %>关键词申请管理
 <ul>
 <ui><a href="#">关键词搜索</a></ui>
 <ui><a href="#">已申请的关键词列表</a></ui>

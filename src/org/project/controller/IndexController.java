@@ -5,16 +5,21 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.project.common.Contstants;
+import org.project.model.SystemConfigure;
 import org.project.model.User;
+import org.project.service.SystemConfigSerivce;
 import org.project.service.userservice;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -35,6 +40,10 @@ public class IndexController {
 	@RequestMapping("/register.html")
 	public String register(){
 		System.out.println("恭喜你进入注册页面页面。");
+		
+		
+		
+		
 		
 		return "register";
 	}
@@ -81,6 +90,7 @@ public class IndexController {
 		
 		session.setAttribute("username", user.getUserName());
 		
+		//遍历用户名与密码
 	   List<User> list= userservice.findUserList();
 		
 		for (User user2 : list) {
@@ -132,20 +142,12 @@ public String regsuccess(User user,HttpServletResponse response,HttpServletReque
 		
 		if(user.getUserName().equals(user2.getUserName())){
 		
-//			out.print("对不起，此用户已经存在");
-			
-			
-			tag=1;
-			
-			
+			tag=1;						
 		}else{
 		
-//			out.print("此用户名可以用");
 	      tag1=1;
 		 
 		}
-		
-		
 		
 	}
 	
@@ -159,12 +161,8 @@ public String regsuccess(User user,HttpServletResponse response,HttpServletReque
 		error = "2";
 		
 		System.out.println("对不起，此用户已经存在");
-		
 	
-		
-		
 	}
-	
 	
 	
 	return error;

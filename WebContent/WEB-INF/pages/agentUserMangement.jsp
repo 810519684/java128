@@ -8,7 +8,7 @@
 </head>
 <body>
 欢迎进入代理商用户管理页面
-<span>welcome ,<%=request.getSession().getAttribute("username") %></span>
+<span>welcome ,<%=session.getAttribute("userName") %></span>
 <ul>
 <ui><a href="#">添加用户</a></ui>
 <ui><a href="#">用户列表</a></ui>

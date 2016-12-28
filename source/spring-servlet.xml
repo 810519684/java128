@@ -16,7 +16,7 @@
 <!-- spring扫描包下的所有类，让注解生效 -->
 <context:component-scan base-package="org.project" />
 
-<!-- <context:annotation-config /> -->
+ <context:annotation-config /> 
 
 <mvc:annotation-driven/>
 <!-- 访问静态文件 ,如引进css,加载图片-->

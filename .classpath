@@ -43,9 +43,10 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-orm-4.3.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-oxm-4.3.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-tx-4.3.2.RELEASE.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-web-4.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-web-4.3.2.RELEASE.jar" sourcepath="C:/Users/huhaiyi/Desktop/ssh的所有的jar/spring包/spring-framework-4.3.2.RELEASE-dist.zip"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-webmvc-4.3.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-test.jar"/>
 	<classpathentry kind="lib" path="C:/Users/huhaiyi/Desktop/ssh的所有的jar/常用jar包/junit-4.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/joda-time-2.3.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

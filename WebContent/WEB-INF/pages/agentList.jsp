@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-恭喜进入代理商管理系统
+恭喜<%=session.getAttribute("userName") %>进入代理商管理系统
 <ul>
-<ui><a href="#">关键词申请</a></ui>
+<ui><a href="applayKeyWord.html">关键词申请</a></ui>
 <ui><a href="agentUser.html">代理商客户管理</a></ui>
 <ui><a href="#">代理商预付款</a></ui>
 <ui><a href="KeyManagement.html">关键词申请管理</a></ui>

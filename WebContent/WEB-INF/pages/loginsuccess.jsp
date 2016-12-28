@@ -27,10 +27,6 @@ border: 1 px solid ;
 margin: 2px;
 
 
-
-width: 80%;
-height: 80%;
-
 }
 
 

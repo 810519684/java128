@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:ApplicationContext-mybatis.xml", "classpath:spring-servlet.xml" })
-public class test {
+public class userTest {
 
 	@Autowired
 
